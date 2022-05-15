@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+
+<div id="container">
+
+	<div class="first-logo active" id="first1" style="display: block;"><img src="https://western-overseas.com/wp-content/uploads/2020/01/Shubham-100x100.png"></div>	
+	<div class="first-logo" id="first3"><img src="https://western-overseas.com/wp-content/uploads/2020/01/Shivani-100x100.png"></div>
+	<div class="first-logo" id="first2"><img src="https://western-overseas.com/wp-content/uploads/2021/05/Palwinder-Kaur-100x100.png"></div>
+
+
+	<div class="second-logo" id="second1"><img src="https://western-overseas.com/wp-content/uploads/2020/01/Shubham-100x100.png"></div>	
+	<div class="second-logo active" id="second3" style="display: block;"><img src="https://western-overseas.com/wp-content/uploads/2020/01/Shivani-100x100.png"></div>
+	<div class="second-logo" id="second2"><img src="https://western-overseas.com/wp-content/uploads/2021/05/Palwinder-Kaur-100x100.png"></div>
+
+
+	<div class="third-logo" id="third1"><img src="https://western-overseas.com/wp-content/uploads/2020/01/Shubham-100x100.png"></div>	
+	<div class="third-logo" id="third2"><img src="https://western-overseas.com/wp-content/uploads/2020/01/Shivani-100x100.png"></div>
+	<div class="third-logo active" id="third3" style="display: block;"><img src="https://western-overseas.com/wp-content/uploads/2021/05/Palwinder-Kaur-100x100.png"></div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+ 
+//first logo animation js 
+$(function () {
+    var timer = setInterval(showDiv, 7500);
+
+    var counter = 2;
+
+    function showDiv() {
+        if (counter == 0) {
+            counter++;
+            return;
+        }
+
+        $("#container .first-logo")
+            .stop()
+            .fadeOut()
+            .removeClass("active")
+
+            .filter(function () {
+                return this.id.match(+counter);
+            })
+            .fadeIn("fast")
+            .addClass("active");
+
+        counter == 3 ? (counter = 1) : counter++;
+    }
+});
+
+//second logo animation js
+$(function () {
+    var timer = setInterval(showDiv, 5000);
+
+    var counter = 1;
+
+    function showDiv() {
+        if (counter == 0) {
+            counter++;
+            return;
+        }
+
+        $("#container .second-logo")
+            .stop()
+            .fadeOut()
+            .removeClass("active")
+
+            .filter(function () {
+                return this.id.match(+counter);
+            })
+            .fadeIn("fast")
+            .addClass("active");
+
+        counter == 3 ? (counter = 1) : counter++;
+    }
+});
+
+//third logo animation js
+$(function () {
+    var timer = setInterval(showDiv, 6300);
+
+    var counter = 1;
+
+    function showDiv() {
+        if (counter == 0) {
+            counter++;
+            return;
+        }
+
+        $("#container .third-logo")
+            .stop()
+            .fadeOut()
+            .removeClass("active")
+
+            .filter(function () {
+                return this.id.match(+counter);
+            })
+            .fadeIn("fast")
+            .addClass("active");
+
+        counter == 3 ? (counter = 1) : counter++;
+    }
+});
+</script>
+
+
+<style> 
+
+/*--first-logo--*/	
+#container{position:relative;height:225px;overflow:hidden}
+.first-logo{display:none!important}
+.first-logo.active{position:absolute;animation:mymove 7.5s infinite; display: block!important}
+@keyframes mymove {
+  0% {top: 100px; opacity: 0; left: 300px}
+  10% {top: 50px; opacity: 1; left: 300px}
+  90% {top: 50px; opacity: 1; left: 300px}
+  100% {top: 0; opacity: 0; left: 300px}
+}
+
+/*--second-logo--*/	
+.second-logo{display:none!important;left:200px}
+.second-logo.active{position:absolute;animation:mymove 5s infinite; display: block!important}
+@keyframes mymove {
+  0% {top: 100px; opacity: 0}
+  10% {top: 50px; opacity: 1}
+  90% {top: 50px; opacity: 1}
+  100% {top: 0; opacity: 0}
+}
+
+/*--third-logo--*/	
+.third-logo{display:none!important;left:400px}
+.third-logo.active{position:absolute;animation:mymove 6.3s infinite; display: block!important}
+@keyframes mymove {
+  0% {top: 100px; opacity: 0}
+  10% {top: 50px; opacity: 1}
+  90% {top: 50px; opacity: 1}
+  100% {top: 0; opacity: 0}
+}
+</style>
+
+</body>
+</html>
